@@ -20,10 +20,8 @@ export default function LogoIntro({ onIntroFinish, onRevealStart }) {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     isMobileRef.current = isMobile;
 
-    if (isMobile) {
-      document.documentElement.classList.add('logo-intro-mobile-active');
-      document.body.classList.add('logo-intro-mobile-active');
-    }
+    document.documentElement.classList.add('logo-intro-active');
+    document.body.classList.add('logo-intro-active');
 
     // Mobile intro is always silent so it can autoplay without controls or prompts.
     video.muted = isMobile;
@@ -48,13 +46,6 @@ export default function LogoIntro({ onIntroFinish, onRevealStart }) {
         });
     }
 
-    if (isMobile) {
-      return () => {
-        document.documentElement.classList.remove('logo-intro-mobile-active');
-        document.body.classList.remove('logo-intro-mobile-active');
-      };
-    }
-
     // Desktop-only gesture support for unmuting the intro animation.
     const handleUserInteraction = () => {
       if (videoRef.current) {
@@ -72,6 +63,8 @@ export default function LogoIntro({ onIntroFinish, onRevealStart }) {
       window.removeEventListener('click', handleUserInteraction);
       window.removeEventListener('touchstart', handleUserInteraction);
       window.removeEventListener('pointerdown', handleUserInteraction);
+      document.documentElement.classList.remove('logo-intro-active');
+      document.body.classList.remove('logo-intro-active');
       document.documentElement.classList.remove('logo-intro-mobile-active');
       document.body.classList.remove('logo-intro-mobile-active');
     };
