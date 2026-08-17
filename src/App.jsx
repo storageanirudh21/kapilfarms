@@ -557,7 +557,7 @@ function App() {
           >
             <img className="video-fallback" src={images.hero} alt="Mruganayani premium farmland" />
             <video ref={videoRef} autoPlay muted loop playsInline preload="auto" onCanPlay={() => setVideoReady(true)} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} style={{ opacity: videoReady ? 1 : 0 }} poster={images.hero} aria-label="Mruganayani farmland video">
-              <source src="https://res.cloudinary.com/pcggq4wl/video/upload/kapilhero_1_-compressed.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/pcggq4wl/video/upload/end_video-compressed.mp4" type="video/mp4" />
               <source src="/herovideo.mp4" type="video/mp4" />
             </video>
             <button className="video-control" type="button" onClick={toggleVideo} aria-label={isPlaying ? 'Pause video' : 'Play video'}>{isPlaying ? <FiPause /> : <FiPlay />}</button>
