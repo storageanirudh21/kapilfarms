@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Syne', sans-serif;
+
+  --color-farm-bg: #DCEAE1;
+  --color-farm-dark: #0A2619;
+  --color-farm-darker: #061B11;
+  --color-farm-card: #0E3222;
+  --color-farm-mint: #86E89E;
+  --color-farm-lightmint: #C4F4CE;
+  --color-farm-text-muted: #4A6E5C;
+  --color-farm-border: #1B4531;
+}
+
+/* Custom scrollbar and animations */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #DCEAE1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0A2619;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14422D;
+}
+
+.font-serif-italic {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+}
+
+/* Smooth glassmorphism */
+.glass-dark {
+  background: rgba(10, 38, 25, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-light {
+  background: rgba(220, 234, 225, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
